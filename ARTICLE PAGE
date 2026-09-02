@@ -1,0 +1,18 @@
+// pages/article/[slug].js
+export default function Article({ article }) {
+  return (
+    <div style={{ padding: 40 }}>
+      <h1>{article.title}</h1>
+      <p>{article.content}</p>
+    </div>
+  );
+}
+
+export async function getStaticProps({ params }) {
+  const articles = require("../../content/articles.json");
+  return {
+    props: {
+      article: articles.find(a => a.slug === params.slug)
+    }
+  };
+}
