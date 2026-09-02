@@ -1,0 +1,26 @@
+theadvantagejournal/
+├── pages/
+│   ├── index.js
+│   ├── cms.js
+│   ├── article/[slug].js
+│   ├── api/
+│       ├── publish.js
+│       ├── save.js
+│
+├── content/
+│   ├── articles.json
+│   ├── pages.json
+│
+├── components/
+│   ├── Layout.js
+│   ├── ArticleCard.js
+│   ├── Editor.js
+│
+├── lib/
+│   ├── articles.js
+│   ├── github.js
+│
+├── public/
+├── styles/
+├── package.json
+├── next.config.js
