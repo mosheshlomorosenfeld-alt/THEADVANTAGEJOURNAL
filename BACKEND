@@ -1,0 +1,18 @@
+// pages/api/publish.js
+import fs from "fs";
+
+export default function handler(req, res) {
+  const body = JSON.parse(req.body);
+
+  const articles = require("../../content/articles.json");
+
+  articles.push({
+    title: body.title,
+    content: body.content,
+    slug: Date.now().toString()
+  });
+
+  fs.writeFileSync("content/articles.json", JSON.stringify(articles));
+
+  res.json({ success: true });
+}
