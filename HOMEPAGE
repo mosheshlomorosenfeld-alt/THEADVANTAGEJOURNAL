@@ -1,0 +1,27 @@
+// pages/index.js
+import { getArticles } from "../lib/articles";
+
+export default function Home({ articles }) {
+  return (
+    <div style={{ padding: 40 }}>
+      <h1>The Advantage Journal</h1>
+
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
+        {articles.map(a => (
+          <a key={a.slug} href={`/article/${a.slug}`}>
+            <h3>{a.title}</h3>
+            <p>{a.category}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      articles: require("../content/articles.json")
+    }
+  };
+}
