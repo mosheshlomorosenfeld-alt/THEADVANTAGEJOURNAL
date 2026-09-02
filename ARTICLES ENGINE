@@ -1,0 +1,4 @@
+// lib/articles.js
+export function getArticles() {
+  return require("../content/articles.json");
+}
